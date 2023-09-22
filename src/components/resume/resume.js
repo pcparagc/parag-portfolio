@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Button, Container, Grid } from "@mui/material";
 import { Document, Page, pdfjs } from "react-pdf";
+
 import pdf from "../../assets/pdf/parag-resume.pdf";
 import DownloadIcon from "@mui/icons-material/Download";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.js",
-  import.meta.url
-).toString();
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const resumeLink =
   "https://github.com/pcparagc/parag-portfolio/blob/main/src/assets/pdf/parag-resume.pdf";
@@ -33,7 +32,7 @@ const Resume = () => {
         </Button>
         <Grid container className="resume">
           <Grid item xs={12} className="d-flex justify-content-center">
-            <Document file={resumeLink}>
+            <Document file={pdf}>
               <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
             </Document>
           </Grid>
