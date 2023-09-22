@@ -33,7 +33,9 @@ const Resume = () => {
         <Grid container className="resume">
           <Grid item xs={12} className="d-flex justify-content-center">
             <Document file={pdf}>
-              <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
+              {[1, 2].map((page) => (
+                <Page pageNumber={page} scale={width > 786 ? 1.7 : 0.6} />
+              ))}
             </Document>
           </Grid>
         </Grid>
