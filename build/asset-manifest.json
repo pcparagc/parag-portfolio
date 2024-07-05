@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ba7e1855.css",
+    "main.js": "/static/js/main.e9a3b08d.js",
+    "static/media/juno.png": "/static/media/juno.9d117b13bc19ed836c0f.png",
+    "static/media/luxecrews.png": "/static/media/luxecrews.89485417a090ab091d2b.png",
+    "static/media/giggi.png": "/static/media/giggi.0c211c9a1d83711a5bdb.png",
+    "static/media/iqgeo.png": "/static/media/iqgeo.30001fb3c28b7ecbedf4.png",
+    "static/media/cognitio_analytics.png": "/static/media/cognitio_analytics.9e0d0d3cc2b8ebcc0cca.png",
+    "static/media/self.png": "/static/media/self.44685da27887fe57ab4b.png",
+    "static/media/motivatemd.png": "/static/media/motivatemd.32e95c681c8f8b8fd241.png",
+    "static/media/parag-resume.pdf": "/static/media/parag-resume.d0cbf6a8d234ad6b8d16.pdf",
+    "index.html": "/index.html",
+    "main.ba7e1855.css.map": "/static/css/main.ba7e1855.css.map",
+    "main.e9a3b08d.js.map": "/static/js/main.e9a3b08d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ba7e1855.css",
+    "static/js/main.e9a3b08d.js"
+  ]
+}

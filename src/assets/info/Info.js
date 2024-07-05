@@ -2,6 +2,7 @@ import { colors } from "../colors/mainGradient";
 import congnitio_analytics from "../img/cognitio_analytics.png";
 import giggi from "../img/giggi.png";
 import hdfc from "../img/hdfc.jpg";
+import iqgeo from "../img/iqgeo.png";
 import juno from "../img/juno.png";
 import luxecrews from "../img/luxecrews.png";
 import motivatemd from "../img/motivatemd.png";
@@ -108,6 +109,14 @@ export const info = {
       description:
         "Constructed a bespoke UI library from the ground up and successfully executed multiple proof of concept (PoC) projects to introduce innovative new features.",
       image: hdfc,
+    },
+    {
+      title: "IQGEO",
+      live: "https://www.iqgeo.com/product/workflow-manager",
+      source: "#",
+      description:
+        "Led the comprehensive development of a Geospatial Network Management tool, intricately tailored to address a variety of client needs, while actively participating in crucial client consultations and decision-making procedures.",
+      image: iqgeo,
     },
     {
       title: "LuxeCrews",
