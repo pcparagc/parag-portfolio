@@ -1,35 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import Style from './BaseLayout.module.scss';
-import Navbar from './Navbar';
-import Home from './home/Home';
-import About from './about/About';
-import Portfolio from './portfolio/Portfolio';
-import Resume from './resume/resume';
-import { Route, Routes } from 'react-router-dom';
-import { Box, Grid } from '@mui/material';
-import ParticlesBg from './particles/ParticlesBg';
-import { logGa } from '../utils/log';
+import React, { useEffect, useState } from "react";
+import Style from "./BaseLayout.module.scss";
+import Navbar from "./Navbar";
+import Home from "./home/Home";
+import About from "./about/About";
+import Portfolio from "./portfolio/Portfolio";
+import Resume from "./resume/resume";
+import { Route, Routes } from "react-router-dom";
+import { Box, Grid } from "@mui/material";
+import ParticlesBg from "./particles/ParticlesBg";
+import { logGa } from "../utils/log";
 
 export default function BaseLayout() {
   let [darkMode, setDarkMode] = useState(false);
 
   function handleToggleDarkMode() {
     let oppositeOfCurrentDarkMode = !darkMode;
-    localStorage.setItem('darkMode', `${oppositeOfCurrentDarkMode}`);
+    localStorage.setItem("darkMode", `${oppositeOfCurrentDarkMode}`);
     setDarkMode(oppositeOfCurrentDarkMode);
-    logGa('dark_mode_toggle', oppositeOfCurrentDarkMode ? 'dark' : 'light');
+    logGa("dark_mode_toggle", oppositeOfCurrentDarkMode ? "dark" : "light");
   }
 
   useEffect(() => {
-    let detectedDarkMode = JSON.parse(localStorage.getItem('darkMode'));
+    let detectedDarkMode = JSON.parse(localStorage.getItem("darkMode"));
     const osDarkModeQuery = window.matchMedia
-      ? window.matchMedia('(prefers-color-scheme: dark)')
+      ? window.matchMedia("(prefers-color-scheme: dark)")
       : null;
 
     if (detectedDarkMode) {
       setDarkMode(detectedDarkMode);
     } else {
-      localStorage.setItem('darkMode', `${!!osDarkModeQuery?.matches}`);
+      localStorage.setItem("darkMode", `${!!osDarkModeQuery?.matches}`);
     }
 
     const updateDarkMode = (e) => {
@@ -37,7 +37,7 @@ export default function BaseLayout() {
     };
 
     if (osDarkModeQuery) {
-      osDarkModeQuery.addEventListener('change', updateDarkMode);
+      osDarkModeQuery.addEventListener("change", updateDarkMode);
     }
   }, []);
 
@@ -46,33 +46,33 @@ export default function BaseLayout() {
       <ParticlesBg darkMode={darkMode.valueOf()} />
       <Grid
         container
-        display={'flex'}
-        flexDirection={'column'}
-        minHeight={'100vh'}
-        justifyContent={'space-between'}
+        display={"flex"}
+        flexDirection={"column"}
+        minHeight={"100vh"}
+        justifyContent={"space-between"}
       >
         <Grid item>
           <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode} />
         </Grid>
         <Grid item flexGrow={1}>
           <Routes>
-            <Route exact path={'/'} element={<Home darkMode={darkMode} />} />
-            <Route exact path={'/about'} element={<About />} />
-            <Route exact path={'/portfolio'} element={<Portfolio />} />
-            <Route exact path={'/resume'} element={<Resume />} />
+            <Route exact path={"/"} element={<Home darkMode={darkMode} />} />
+            <Route exact path={"/about"} element={<About />} />
+            <Route exact path={"/portfolio"} element={<Portfolio />} />
+            <Route exact path={"/resume"} element={<Resume />} />
           </Routes>
         </Grid>
         <Grid item>
           <Box
-            component={'footer'}
-            display={'flex'}
-            flexDirection={'column'}
-            alignItems={'center'}
-            py={'1.5rem'}
+            component={"footer"}
+            display={"flex"}
+            flexDirection={"column"}
+            alignItems={"center"}
+            py={"1.5rem"}
             sx={{ opacity: 0.7 }}
-            width={'100%'}
+            width={"100%"}
           >
-            <p>&copy; 2023 | Parag Chaudhari</p>
+            <p>&copy; {new Date().getFullYear()} | Parag Chaudhari</p>
           </Box>
         </Grid>
       </Grid>
